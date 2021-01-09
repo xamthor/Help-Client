@@ -1,0 +1,11 @@
+<main class="flex w-full justify-between text-3xl mt-4 mb-2 ">
+    <section class="ml-4 ">
+        <fa-icon [icon]="menu" class="text-gray-500 cursor-pointer" (click)="navigateToMenu()" ></fa-icon>
+    </section>
+    <section>
+        <h1 class="text-base">Hello, {{firstName}}</h1>
+    </section>
+    <section class="mr-4">
+        <fa-icon [icon]="profilePic" class="text-5xl cursor-pointer" (click)="navigateToStatusUpdate()"></fa-icon>
+    </section>
+</main>

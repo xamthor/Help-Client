@@ -1,0 +1,15 @@
+<main class="flex w-full bg-gray-50 rounded-full shadow-md mt-4 mb-4 p-2">
+    <span class="flex items-center leading-normal bg-gray-50 px-3 border-0 rounded rounded-r-none text-2xl text-gray-600" >
+        <fa-icon [icon]="faUser" *ngIf="title === 'Username'"></fa-icon>
+        <fa-icon [icon]="faLock" *ngIf="title === 'Password'"></fa-icon>
+        <fa-icon [icon]="faEmail" *ngIf="title === 'Email'"></fa-icon>
+        <fa-icon [icon]="faPhone" *ngIf="title === 'Phone Number'"></fa-icon>
+        <fa-icon [icon]="faUser" *ngIf="title === 'First Name'"></fa-icon>
+        <fa-icon [icon]="faUser" *ngIf="title === 'Last Name'"></fa-icon>
+        <fa-icon [icon]="faSearch" *ngIf="title === 'Search'"></fa-icon>
+        <fa-icon [icon]="faMeh" *ngIf="title === 'How do you feel?'"></fa-icon>
+    </span>
+    <input type="text" #inputValue (change)="this.getUserInput.emit(inputValue.value)" placeholder={{title}} class="block self-center text-center text-xl placeholder-black bg-gray-50 outline-none" />
+</main>
+
+

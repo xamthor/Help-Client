@@ -1,0 +1,19 @@
+<main class="flex w-full justify-around mb-8">
+    <section class="text-center" *ngFor="let profile of arrayOfProfiles; index as i" [hidden] ="showConnection" >
+        <fa-icon [icon]="profilePic" class="text-3xl" (click)="displayConnection(i)"></fa-icon>
+        <p class="text-center mt-4 text-xs">{{profile.connection_user.firstName}}</p>
+    </section>
+    
+    <section class="flex justify-around items-center bg-blue-300 w-full" *ngIf ="showConnection">
+        <fa-icon [icon]="profilePic" class="text-4xl"></fa-icon>
+        <article class='mt-2 mb-2'>
+            <p class="text-center text-xs">{{fName}} {{lName}}</p>
+            <div>
+                <button type="button" class="bg-red-600 text-xs text-white rounded-2xl w-16 mr-4" >SOS</button>
+                <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16" >Call</button>
+                <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16 ml-4" >Message</button>
+            </div>
+        </article>
+        <fa-icon [icon]="powerOff" class="text-sm text-red-900" (click)="reshowTopFive()"></fa-icon>
+    </section>
+</main>

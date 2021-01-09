@@ -1,0 +1,19 @@
+<main class="flex flex-col justify-around h-screen text-center bg-hero-pattern bg-cover lg:bg-contain lg:bg-no-repeat">
+    <h2 class="text-3xl">Update Your Status</h2>
+    <section>
+        <article class="flex justify-around sm:w-2/3 sm:m-auto">
+            <fa-icon [icon]="faLaugh" class="text-6xl text-yellow-400" (click)="updateContentByEmotion('Laughing')"></fa-icon>
+            <fa-icon [icon]="faSmile" class="text-6xl text-yellow-400" (click)="updateContentByEmotion('Happy')"></fa-icon>
+            <fa-icon [icon]="faMeh" class="text-6xl text-yellow-400" (click)="updateContentByEmotion('Meh')"></fa-icon>
+            <fa-icon [icon]="faSadCry" class="text-6xl text-yellow-400" (click)="updateContentByEmotion('Sad')"></fa-icon>
+            <fa-icon [icon]="faAngy" class="text-6xl text-yellow-400" (click)="updateContentByEmotion('Angry')"></fa-icon>
+        </article>
+        <p class="text-sm sm:text-lg text-gray-400">Choose how you feel or type a brief message</p>
+    </section>
+    
+    <section class="flex flex-col items-center">
+        <app-login-inputs [title]="titleEmotion" (getUserInput)="getContent($event)"></app-login-inputs>
+        <p class="text-sm sm:text-base text-gray-400">Be brief and under 40 characters</p>
+    </section>
+    <h2 class="text-3xl cursor-pointer" (click)="updateStatus()">Update Status</h2>
+</main>

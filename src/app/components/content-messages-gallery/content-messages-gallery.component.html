@@ -1,0 +1,16 @@
+<main class="flex flex-col justify-around items-center">
+    <section *ngFor="let profile of arrayOfProfiles; index as i" [ngClass]="{'bg-blue-300': i===0, 'bg-green-300': i%2=== 0, 'bg-yellow-300': i%2 !== 0 }" class="flex flex-row bg-blue-300 w-11/12 h-24 mt-4 pt-2">
+        <article class="ml-1 mr-4">
+            <fa-icon [icon]="profilePic" class="text-4xl"></fa-icon>
+        </article>
+        <article class="w-full">
+            <section class="flex justify-between mr-2">
+                <p>{{profile.name}}</p>
+                <p>{{profile.lastMessageTimeStamp}}</p>
+            </section>
+            <section class="mr-2">
+                <p class="text-xs text-gray-700">Lorem ipsum dolor sit amet, consetetur sadi pscing elitr, sed diam nonumy eirmod tempor invidunt ut </p>
+            </section>
+        </article>
+    </section>
+</main>

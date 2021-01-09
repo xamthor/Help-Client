@@ -1,0 +1,16 @@
+<main class="flex flex-col justify-around items-center h-screen text-center  lg:bg-contain lg:bg-no-repeat">
+    <h2 class="text-3xl text-black dark:text-white">Welcome</h2>
+    <section>
+        <app-login-inputs [title]="titleSearch" (getUserInput)="getUser($event)"></app-login-inputs>
+        <button type="button" class="bg-green-600 text-lg text-white rounded-2xl w-40 p-2 cursor-pointer" (click)="findUser()" >Search</button>
+    </section>
+    <section *ngFor="let profile of arrayOfProfiles; index as i" [ngClass]="{'bg-blue-300': i===0, 'bg-green-300': i%2=== 0, 'bg-yellow-300': i%2 !== 0 }" class="flex justify-around items-center w-11/12 h-16 mt-4 rounded-lg text-center">
+        <fa-icon [icon]="profilePic" class="text-4xl"></fa-icon>
+        <p>{{profile.firstName}} {{profile.lastName}}</p>
+        <article >
+            <button type="button" class="bg-white text-xs text-black rounded-2xl w-16 p-2" (click)="createConnection(profile._id)" >Add</button>
+        </article>
+    </section>
+
+    <h2 class="text-3xl cursor-pointer  text-black dark:text-white" (click)="finish()">Finish</h2>
+</main>

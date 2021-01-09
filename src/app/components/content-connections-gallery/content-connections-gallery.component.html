@@ -1,0 +1,24 @@
+<main class="mt-4">
+    <section class="flex justify-center text-2xl">
+        <fa-icon [icon]="faPlus" (click)="goToSearchConnectionsPage()"></fa-icon>
+    </section>
+    <section class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 place-items-center mt-4">
+        <article 
+                *ngFor="let profile of arrayOfProfiles; index as i" 
+                [ngClass]="{'bg-blue-300': i%3===0, 'bg-green-300': i%2=== 0, 'bg-yellow-300': i%2 === 1 }"  
+                class="w-40 mb-4 shadow-md rounded-lg text-center"
+                >
+            <section class="grid grid-row-1 w-full">
+                <fa-icon [icon]="star" 
+                    (click)="addToTopFive(profile.connection_user._id, profile.star)"
+                    [ngClass]="{'text-red-600': profile.star === true}" 
+                    class="text-sm justify-self-end text-white mr-2"></fa-icon>
+                <fa-icon [icon]="profilePic" class="text-4xl justify-self-center"></fa-icon>
+                
+            </section>
+            
+            <p>{{profile.connection_user.firstName}} {{profile.connection_user.lastName}}</p>
+        </article>
+    </section>
+
+</main>
