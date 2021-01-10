@@ -8,6 +8,6 @@ For purposes of the foregoing, “Sell” means practicing any or all of the rig
 
 Software: Help
 
-License: TD
+License: Apache 2.0
 
-Licensor: TD
+Licensor: Miguel Hernandez and JC Smiley
