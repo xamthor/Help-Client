@@ -4,6 +4,7 @@ import {AuthenticateService} from '../services/authenticate.service';
 import { User } from '../interfaces/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Router} from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class LoginService {
 
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
     var raw = JSON.stringify({"email":userName,"password":password});
-    await this.http.post<any>('http://localhost:3000/auth/login', raw,{headers: headers}).subscribe(
+    await this.http.post<any>(`${environment.apiEndPointRoute}/auth/login`, raw,{headers: headers}).subscribe(
       results => {
         //console.log(results); // TESTING
         this.newUser.userName = results.data.user.userName;
