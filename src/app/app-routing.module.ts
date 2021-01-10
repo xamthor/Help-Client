@@ -11,8 +11,8 @@ import {SearchConnectionsComponent} from './components/search-connections/search
 import {HomepageComponent} from './components/homepage/homepage.component'
 
 const routes: Routes = [
-  { path: 'home', component: LoginScreenComponent },
-  { path: 'login', component: HomepageComponent },
+  { path: 'login', component: LoginScreenComponent },
+  { path: 'home', component: HomepageComponent },
   { path: 'setup', component: SetupNameComponent },
   { path: 'feed', component: FeedContentComponent},
   { path: 'message', component: MessagesContentComponent},
@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'update-status', component: UpdateStatusComponent},
   {path: 'menu', component: MenuScreenComponent},
   {path: 'search-connections', component: SearchConnectionsComponent},
-  { path: '',   redirectTo: '/login', pathMatch: 'full' }
+  { path: '',   redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({
