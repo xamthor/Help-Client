@@ -2,6 +2,11 @@
     <h2 class="text-3xl mt-20 dark:text-white">Menu</h2>
     <section class="flex flex-col items-center mt-40 sm:mt-80">
         <button type="button" class="bg-green-600 text-white rounded-2xl p-2 w-72 mb-4 text-3xl mb-20" (click)="return()" >Return</button>
+        <button class="bg-green-600 text-white rounded-2xl p-2 w-72 mb-4 text-3xl mb-20" (click)="darktoggle()">
+        	Toggle Dark Mode
+			<fa-icon [icon]="Lightsolid" class="text-2xl" [inverse]="false" [ngClass]="{'hidden': !darkmode()}"></fa-icon>
+			<fa-icon [icon]="Lightregular" class="text-2xl" [inverse]="false" [ngClass]="{'hidden': darkmode()}"></fa-icon>
+		</button>
         <button type="button" class="bg-red-600 text-white rounded-2xl p-2 w-72 mb-4 text-3xl" (click)="logOut()" >Log Out</button> 
     </section>
 </main>
