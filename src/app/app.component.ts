@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from './../environments/environment';
+import { faLightbulb as solid } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb as regular } from '@fortawesome/free-regular-svg-icons';
+
 
 @Component({
   selector: 'app-root',
@@ -9,6 +12,8 @@ import { environment } from './../environments/environment';
 export class AppComponent implements OnInit{
 	title: string = 'Help';
 	register: string = "false";
+	Lightsolid = solid;
+	Lightregular = regular;
 
 	ngOnInit(): void {
 		this.darkmode()
