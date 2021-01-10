@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'update-status', component: UpdateStatusComponent},
   {path: 'menu', component: MenuScreenComponent},
   {path: 'search-connections', component: SearchConnectionsComponent},
-  { path: '',   redirectTo: '/home', pathMatch: 'full' }
+  { path: '',   redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
