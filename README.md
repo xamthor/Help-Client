@@ -29,3 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Digital Ocean
 
 Build: npx ng build --prod
+Build: NODE_ENV=production npx ng build --prod
