@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import {AuthenticateService} from '../services/authenticate.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConnectionsService {
-
+  
   constructor(private http: HttpClient, private authenticateUser: AuthenticateService, private cookieService: CookieService) { }
 
   // Method used on the content connections page to add a user to the top five    
@@ -17,7 +18,7 @@ export class ConnectionsService {
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
     let options = { headers: headers, withCredentials: true };
     var raw = JSON.stringify({"connection_user" : connectionID});
-    return this.http.post<any>(`http://localhost:3000/connection/topfive/add`, raw, options);    
+    return this.http.post<any>(`${environment.apiEndPointRoute}/connection/topfive/add`, raw, options);    
   }
 
     // Method used on the content connections page to add a user to the top five    
@@ -27,7 +28,7 @@ export class ConnectionsService {
       const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
       let options = { headers: headers, withCredentials: true };
       var raw = JSON.stringify({"connection_user" : connectionID});
-      return this.http.post<any>(`http://localhost:3000/connection/topfive/remove`, raw, options);    
+      return this.http.post<any>(`${environment.apiEndPointRoute}/connection/topfive/remove`, raw, options);    
     }
 
   // Method used on in the search-connections page to search database of users for anyone matching the searchTerm
@@ -36,7 +37,7 @@ export class ConnectionsService {
     this.cookieService.set('jwt',authToken);
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
     let options = { headers: headers, withCredentials: true };
-    return this.http.get<any>(`http://localhost:3000/search?s=${searchTerm}`, options);    
+    return this.http.get<any>(`${environment.apiEndPointRoute}/search?s=${searchTerm}`, options);    
   }
 
   // Method used on the content-connections page to get all of the logged in user's connections
@@ -45,7 +46,7 @@ export class ConnectionsService {
     this.cookieService.set('jwt',authToken);
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
     let options = { headers: headers, withCredentials: true };
-    return this.http.get<any>(`http://localhost:3000/connection/all`, options);    
+    return this.http.get<any>(`${environment.apiEndPointRoute}/connection/all`, options);    
   }
 
   // Method used on the content-connections page to get top five user's connections
@@ -54,7 +55,7 @@ export class ConnectionsService {
     this.cookieService.set('jwt',authToken);
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
     let options = { headers: headers, withCredentials: true };
-    return this.http.get<any>(`http://localhost:3000/connection/topfive`, options);    
+    return this.http.get<any>(`${environment.apiEndPointRoute}/connection/topfive`, options);    
   }
 
   // Method used on the search-connections page to add a user as a logged in user's connection.
@@ -64,7 +65,7 @@ export class ConnectionsService {
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
     let options = { headers: headers, withCredentials: true };
     var raw = JSON.stringify({"connection_user":id});
-    await this.http.post<any>('http://localhost:3000/connection/create', raw, options).subscribe(
+    await this.http.post<any>(`${environment.apiEndPointRoute}/connection/create`, raw, options).subscribe(
       results => {
         // TODO: Solve duplicate id issue when the user add someone who is already an connection
 

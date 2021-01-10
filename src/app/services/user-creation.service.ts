@@ -4,6 +4,7 @@ import {UserAccountService} from '../services/user-account.service';
 import {AuthenticateService} from '../services/authenticate.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Router} from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -51,7 +52,7 @@ export class UserCreationService {
 
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
     var raw = JSON.stringify(this.newUser);
-    await this.http.post<any>('http://localhost:3000/auth/signup', raw,{headers: headers}).subscribe(
+    await this.http.post<any>(`${environment.apiEndPointRoute}/auth/signup`, raw,{headers: headers}).subscribe(
       results => {
         this.authenticateUser.updateToken(results.token) //record the auth token
         this.router.navigate(['/search-connections']); // Redirect the user to search connections's screen 
