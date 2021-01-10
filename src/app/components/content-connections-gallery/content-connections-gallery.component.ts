@@ -44,8 +44,12 @@ export class ContentConnectionsGalleryComponent implements OnInit {
         // TODO: Flash a message that tell user that they have remove someone from top 5
       })
       //console.log(`Add to Top Five ${connectionId} because the star is ${star}`); // TESTING
+
     }
-    
+    this.connectionsService.getAllConnections().subscribe(data => {
+      this.arrayOfProfiles = data;
+      //console.log(data); //TESTING
+    })
   }
 
   goToSearchConnectionsPage(){
