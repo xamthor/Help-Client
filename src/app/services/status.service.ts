@@ -18,7 +18,7 @@ export class StatusService {
     this.cookieService.set('jwt',authToken);
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
     let options = { headers: headers, withCredentials: true };
-    return this.http.get<any>(`${environment.apiEndPointRoute}/status/all`, options);    
+    return this.http.get<any>(`${environment.apiEndPointRoute}/feed/all`, options);    
   }
 
   async updateStatus(userContent: string){
