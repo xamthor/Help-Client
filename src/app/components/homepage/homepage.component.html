@@ -1,5 +1,5 @@
-<main class="h-screen flex flex-col">
-    <section class=" flex justify-around lg:justify-start items-center absolute w-screen mt-8 ">
+<main class="h-screen flex-col">
+    <section class=" flex justify-around lg:justify-start items-center sm:absolute w-screen mt-8 ">
         <section class="flex">
             <img class="h-8 mr-4" src="../../../assets/hands.png " />
             <h2 class="text-3xl font-extrabold text-blue-500 " >Help Me</h2>
@@ -7,8 +7,14 @@
   
         <a (click)="navigateToLogin()" class="text-lg text-blue-400 cursor-pointer lg:ml-8">Login</a>
     </section>
-    <section id="content">
-        <section id="left"></section>
-        <section id="right"></section>
+    <section class="flex flex-col sm:flex-row">
+        <section class="flex-1 text-center mt-32 sm:mt-96">
+            <h2 class="text-2xl text-purple-800 pr-8 pl-8">I am having a mental health CRISIS</h2>
+            <p class="mt-4">Designed primarily as an “SOS” (distress signal) to a selected circle of trusted people when someone is going through a mental health crisis.</p>
+            <p class="text-blue-400 mt-4">Register for the Beta</p>
+        </section>
+        <section class="flex-1 text-center mt-32 sm:mt-80">
+            <img class="h-auto mr-4" src="../../../assets/help-showcase.png " />
+        </section>
     </section>
 </main>
