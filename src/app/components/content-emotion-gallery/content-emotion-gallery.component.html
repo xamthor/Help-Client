@@ -6,13 +6,19 @@
     
     <section *ngFor="let profile of arrayOfProfiles; index as i" [ngClass]="{'bg-blue-300': i===0, 'bg-green-300': i%2=== 0, 'bg-yellow-300': i%2 !== 0 }" class="flex flex-col justify-around w-11/12 h-36 mt-4 rounded-lg text-center">
         <fa-icon [icon]="profilePic" class="text-4xl"></fa-icon>
-        <p>{{profile.name}}  </p>
+        <p>{{profile.user_id.firstName}} {{profile.user_id.lastName}}   </p>
         <p>Relationship: Classified</p>
-        <p>Feeling: Inspire to code</p>
+        <p>{{profile.content}}</p>
         <article >
-            <button type="button" class="bg-red-600 text-xs text-white rounded-2xl w-16 mr-4" >SOS</button>
-            <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16" >Call</button>
-            <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16 ml-4" >Message</button>
+            <button type="button" class="bg-red-600 text-xs text-white rounded-2xl w-16 mr-4" >
+                <a href={{convertPhoneNumber(profile.user_id.phoneNumber)}}>SOS</a>
+            </button>
+            <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16" >
+                <a href={{convertPhoneNumber(profile.user_id.phoneNumber)}}>Call</a>
+            </button>
+            <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16 ml-4" >
+                <a href={{convertTextMessage(profile.user_id.phoneNumber)}}>Message</a>
+            </button>
         </article>
     </section>
 </main>
