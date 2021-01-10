@@ -18,15 +18,6 @@
             <section class="h-36 flex flex-col justify-around">
                 <h3 *ngIf="!register" class="text-3xl cursor-pointer text-black dark:text-white" (click)="login()">Sign In</h3>
                 <h3 *ngIf="register" class="text-3xl cursor-pointer text-black dark:text-white" (click) ="createAccountAndLogin()" >Create</h3>
-                <p class="text-sm text-black dark:text-white">Or</p>
-                <article class="flex justify-center">
-                    <div class="mr-4 bg-black flex items-center justify-center rounded-full h-8 w-8">
-                        <img class="h-4 w-4 cursor-pointer" src="../../../assets/apple.png" alt="image of the Apple logo" />
-                    </div>
-                    <div class="bg-red-600  flex items-center justify-center rounded-full h-8 w-8">
-                        <img class="h-4 w-4 cursor-pointer" src="../../../assets/google.png" alt="image of the Apple logo" />
-                    </div>
-                </article>
             </section>
             <p *ngIf="!register">
                 <span class="text-gray-400">Don't have an account?</span> 
