@@ -1,5 +1,9 @@
-<main class="flex flex-col justify-around items-center">
-    <p class="text-gray-400">Update</p>
+<main class="flex flex-col justify-around items-center mt-4">
+    <article (click)="navigateToStatusUpdate()" class="flex justify-center items-center cursor-pointer">
+        <fa-icon [icon]="feather" class="text-2xl mr-4"></fa-icon>
+        <p class="text-gray-400">Feeling Update</p>
+    </article>
+    
     <section *ngFor="let profile of arrayOfProfiles; index as i" [ngClass]="{'bg-blue-300': i===0, 'bg-green-300': i%2=== 0, 'bg-yellow-300': i%2 !== 0 }" class="flex flex-col justify-around w-11/12 h-36 mt-4 rounded-lg text-center">
         <fa-icon [icon]="profilePic" class="text-4xl"></fa-icon>
         <p>{{profile.name}}  </p>
