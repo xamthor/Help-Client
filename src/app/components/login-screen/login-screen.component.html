@@ -14,7 +14,6 @@
                 <article *ngIf="register">
                     <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>
                 </article>         
-                <p *ngIf="!register" class="text-sm text-gray-400">Forgot your password?</p>
             </section>    
             <section class="h-36 flex flex-col justify-around">
                 <h3 *ngIf="!register" class="text-3xl cursor-pointer text-black dark:text-white" (click)="login()">Sign In</h3>
