@@ -21,7 +21,7 @@ export class StatusService {
     await this.http.post<any>('http://localhost:3000/status/create', raw, options).subscribe(
       results => {
 
-        console.log(results);
+        ///console.log(results);
         this.router.navigate(['/feed']);
       },
       Error => {

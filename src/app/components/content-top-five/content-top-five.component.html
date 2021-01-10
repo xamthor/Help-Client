@@ -9,9 +9,15 @@
         <article class='mt-2 mb-2'>
             <p class="text-center text-xs">{{fName}} {{lName}}</p>
             <div>
-                <button type="button" class="bg-red-600 text-xs text-white rounded-2xl w-16 mr-4" >SOS</button>
-                <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16" >Call</button>
-                <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16 ml-4" >Message</button>
+                <button type="button" class="bg-red-600 text-xs text-white rounded-2xl w-16 mr-4" >
+                    <a href={{phoneNumber}}>SOS</a>
+                </button>
+                <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16" >
+                    <a href={{phoneNumber}}>Call</a>
+                </button>
+                <button type="button" class="bg-white text-xs text-gray-500 rounded-2xl w-16 ml-4" >
+                    <a href="{{textMessage}}">Message</a>
+                </button>
             </div>
         </article>
         <fa-icon [icon]="powerOff" class="text-sm text-red-900" (click)="reshowTopFive()"></fa-icon>

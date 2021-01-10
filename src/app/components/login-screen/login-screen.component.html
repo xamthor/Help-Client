@@ -4,7 +4,7 @@
         <article class="mt-20 sm:ml-4 sm:mr-4 lg:mr-20 hidden sm:block md:block lg:block xl:block">
             <img class="h-2/3 " src="../../../assets/hands.png" />
         </article>
-        <article class="flex flex-col justify-around sm:h-2/3  sm:mt-20 sm:pb-4 text-center sm:bg-none">
+        <article class="flex flex-col justify-around sm:h-2/3  sm:mt-20 sm:pb-4 text-center bg-hero-pattern bg-cover sm:bg-none">
             <h3 *ngIf="!register" class="text-3xl text-black dark:text-white">Welcome</h3>
             <h3 *ngIf="register" class="text-3xl text-black dark:text-white">Create account</h3>
             <section class="flex flex-col items-center">
@@ -14,20 +14,10 @@
                 <article *ngIf="register">
                     <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>
                 </article>         
-                <p *ngIf="!register" class="text-sm text-gray-400">Forgot your password?</p>
             </section>    
             <section class="h-36 flex flex-col justify-around">
                 <h3 *ngIf="!register" class="text-3xl cursor-pointer text-black dark:text-white" (click)="login()">Sign In</h3>
                 <h3 *ngIf="register" class="text-3xl cursor-pointer text-black dark:text-white" (click) ="createAccountAndLogin()" >Create</h3>
-                <p class="text-sm text-black dark:text-white">Or</p>
-                <article class="flex justify-center">
-                    <div class="mr-4 bg-black flex items-center justify-center rounded-full h-8 w-8">
-                        <img class="h-4 w-4 cursor-pointer" src="../../../assets/apple.png" alt="image of the Apple logo" />
-                    </div>
-                    <div class="bg-red-600  flex items-center justify-center rounded-full h-8 w-8">
-                        <img class="h-4 w-4 cursor-pointer" src="../../../assets/google.png" alt="image of the Apple logo" />
-                    </div>
-                </article>
             </section>
             <p *ngIf="!register">
                 <span class="text-gray-400">Don't have an account?</span> 

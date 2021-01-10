@@ -15,6 +15,7 @@ export class ContentTopFiveComponent implements OnInit {
   fName :string = ""; // variable displayed when highlighting one of the top five
   lName :string = ""; // variable displayed when highlighting one of the top five
   phoneNumber :string = "";  // variable displayed when highlighting one of the top five
+  textMessage :string = "";
 
   dummyData :User[] = [
     {
@@ -66,7 +67,8 @@ export class ContentTopFiveComponent implements OnInit {
     this.showConnection = true;
     this.fName = this.arrayOfProfiles[index].connection_user.firstName;
     this.lName = this.arrayOfProfiles[index].connection_user.lastName;
-    this.phoneNumber= this.arrayOfProfiles[index].connection_user.phoneNumber;
+    this.phoneNumber = `tel:$(this.arrayOfProfiles[index].connection_user.phoneNumber)`;
+    this.textMessage = `sms:$(this.arrayOfProfiles[index].connection_user.phoneNumber)?&body=I%20am%20having%20a%20mental%20health%20crisis.%20I%20need%20help!`;
   }
 
   reshowTopFive(){

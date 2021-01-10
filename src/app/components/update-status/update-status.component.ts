@@ -28,7 +28,6 @@ export class UpdateStatusComponent implements OnInit {
   }
 
   updateContentByEmotion(emotion: string){
-    console.log(emotion);
     this.content = `I am ${emotion}`;
     this.updateStatus();
   }
