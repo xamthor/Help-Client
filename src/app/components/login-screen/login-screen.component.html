@@ -1,10 +1,10 @@
-<main class="flex flex-col md:pt-20 items-center h-full">
-    <h1 class="text-6xl font-bold font-login-logo text-black dark:text-white p-12">Help Me</h1>
+<main class="flex flex-col md:pt-20 items-center h-screen">
+    <h1 class="text-6xl font-bold font-login-logo text-black dark:text-white p-12 pt-6">Help Me</h1>
     <section class="flex flex-row h-full">
         <article class="mt-20 sm:ml-4 sm:mr-4 lg:mr-20 hidden sm:block md:block lg:block xl:block h-full">
             <img class="h-2/3 " src="../../../assets/hands.png" />
         </article>
-        <article class="flex flex-col justify-around sm:h-auto  sm:mt-20 sm:pb-4 text-center sm:bg-none">
+        <article class="flex flex-col justify-around sm:h-auto sm:mt-20 sm:pb-4 text-center sm:bg-none">
             <h3 *ngIf="!register" class="text-3xl text-black dark:text-white">Welcome</h3>
             <h3 *ngIf="register" class="text-3xl text-black dark:text-white">Create account</h3>
             <section class="flex flex-col items-center">
@@ -15,16 +15,14 @@
                     <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>
                 </article>         
             </section>    
-            <section class="h-28 flex flex-col justify-around">
+            <section class="h-12 flex flex-col justify-around">
                 <h3 *ngIf="!register" class="text-3xl cursor-pointer text-black dark:text-white" (click)="login()">Sign In</h3>
                 <h3 *ngIf="register" class="text-3xl cursor-pointer text-black dark:text-white" (click) ="createAccountAndLogin()" >Create</h3>
             </section>
-            <p *ngIf="!register">
+            <p *ngIf="!register" class="h-12 mb-8">
                 <span class="text-gray-400">Don't have an account?</span> 
                 <a class="cursor-pointer text-black dark:text-white" (click)="gotoCreateAccountViewScreen()"> Create</a>
             </p>
         </article>
     </section>
-    
-
 </main>
