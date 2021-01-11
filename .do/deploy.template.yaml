@@ -8,6 +8,6 @@ spec:
     build_command: "npx ng build --prod"
     envs:
     - key: NODE_ENV
-        value: "production"
+    value: "production"
     catchall_document: "index.html"
     
