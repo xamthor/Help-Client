@@ -1,13 +1,12 @@
 spec:
-    name: help-client
-    static_sites:
+  name: help-client
+  static_sites:
     - name: help-client
-    git:
-        branch: master
-        repo_clone_url: git@github.com:xamthor/Help-Client.git
-    build_command: "npx ng build --prod"
-    envs:
+  git:
+    branch: master
+    repo_clone_url: 'git@github.com:xamthor/Help-Client.git'
+  build_command: npx ng build --prod
+  envs:
     - key: NODE_ENV
-        value: "production"
-    catchall_document: "index.html"
-    
+      value: production
+  catchall_document: index.html
