@@ -9,7 +9,11 @@
         <fa-icon [icon]="faSearch" *ngIf="title === 'Search'"></fa-icon>
         <fa-icon [icon]="faMeh" *ngIf="title === 'How do you feel?'"></fa-icon>
     </span>
-    <input type="text" #inputValue (change)="this.getUserInput.emit(inputValue.value)" placeholder={{title}} class="block self-center text-center text-xl placeholder-black bg-gray-50 outline-none" />
+    <input  *ngIf="title === 'Password'; else elseBlock" type="Password" #inputValue (change)="this.getUserInput.emit(inputValue.value)" placeholder="{{title}}" class="block self-center text-center text-xl placeholder-black bg-gray-50 outline-none" />
+    <ng-template #elseBlock>
+    <input type="text" #inputValue (change)="this.getUserInput.emit(inputValue.value)" placeholder="{{title}}" class="block self-center text-center text-xl placeholder-black bg-gray-50 outline-none" />
+    </ng-template>
+
 </main>
 
 
