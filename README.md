@@ -1,3 +1,5 @@
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue-ghost.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/xamthor/Help-Client/tree/master&refcode=ad02297a6586)
+
 # Help
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.

@@ -1,0 +1,10 @@
+spec:
+ name: help-client
+ static_sites:
+ - git:
+     branch: master
+     repo_clone_url: git@github.com:xamthor/Help-Client.git
+  envs:
+   - key: NODE_ENV
+     value: "production"
+   name: help-client
