@@ -15,7 +15,7 @@
                     <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>
                 </article>         
             </section>    
-            <section class="h-36 flex flex-col justify-around">
+            <section class="h-28 flex flex-col justify-around">
                 <h3 *ngIf="!register" class="text-3xl cursor-pointer text-black dark:text-white" (click)="login()">Sign In</h3>
                 <h3 *ngIf="register" class="text-3xl cursor-pointer text-black dark:text-white" (click) ="createAccountAndLogin()" >Create</h3>
             </section>
