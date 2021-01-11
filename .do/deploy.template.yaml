@@ -5,6 +5,5 @@ spec:
         branch: master
         repo_clone_url: git@github.com:xamthor/Help-Client.git
     name: help-client
-    build_command: "npx ng build --prod"
-    catchall_document: "index.html"
+
     
