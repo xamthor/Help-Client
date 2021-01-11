@@ -4,7 +4,9 @@ spec:
  - git:
      branch: master
      repo_clone_url: git@github.com:xamthor/Help-Client.git
+  build_command: "npx ng build --prod"
   envs:
    - key: NODE_ENV
      value: "production"
+  catchall_document: "index.html"
    name: help-client
