@@ -10,7 +10,7 @@
             <section class="flex flex-col items-center">
                 <app-login-inputs [title]="titleUserEmail" (getUserInput)="getEmail($event)" ></app-login-inputs>
                 <app-login-inputs [title]="titleUserPassword"(getUserInput)="getPassword($event)"></app-login-inputs>
-                <p *ngIf="inValidLogin" class="text-md text-red-600">InValid Login or Password</p>
+                <p *ngIf="inValidLogin" class="text-md text-red-600">Invalid Login or Password</p>
                 <article *ngIf="register">
                     <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>
                 </article>         
