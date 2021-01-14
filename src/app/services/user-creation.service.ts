@@ -51,8 +51,7 @@ export class UserCreationService {
           newPhoneArray.push(num);
         }
       });
-      this.newUser.phoneNumber = newPhoneArray.join("");  
-      console.log(this.newUser.phoneNumber);  
+      this.newUser.phoneNumber = newPhoneArray.join(""); 
   }
 
   // Update the user account service and database with the temp user
