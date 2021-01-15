@@ -1,0 +1,14 @@
+<main class="flex h-screen flex-col justify-around items-center">
+    <h1 class="text-3xl text-black dark:text-white">Update Profile</h1>
+    <app-login-inputs [title]="titleFirstName" (getUserInput)="getFirstName($event)"></app-login-inputs>
+    <app-login-inputs [title]="titleLastName" (getUserInput)="getLastName($event)"></app-login-inputs>
+
+    <section>
+        <app-login-inputs [title]="titlePhone" (getUserInput)="getPhone($event)"></app-login-inputs>
+        <p class="text-sm sm:text-lg text-gray-400 mb-4"><span class="text-green-400">Preferred Format:</span> Numbers Only (Example 9018884484)</p>
+    </section>
+    
+    <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>
+    <app-login-inputs [title]="titleUserEmail" (getUserInput)="getEmail($event)" ></app-login-inputs>
+    <h1 *ngIf="!register" class="text-3xl cursor-pointer text-black dark:text-white" (click)="updateProfile()">Update</h1>
+</main>
