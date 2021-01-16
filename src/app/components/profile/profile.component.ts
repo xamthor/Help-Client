@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {UserAccountService} from '../../services/user-account.service';
+import {ProfileService} from '../../services/profile.service';
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-profile',
@@ -19,39 +22,65 @@ export class ProfileComponent implements OnInit {
   newUserLname: string = ""; // variable updated from the input designiated input field and then used to update the temp User
   newUserPhone: string = ""; // variable updated from the input designiated input field and then used to update the temp User
 
-  constructor(private router:Router) { }
+
+  updatedCurrentUser :User = {
+    userName: "",
+    password: "",
+    email: "",
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    topFiveProfiles: [],
+    connections: [],
+  };
+
+  constructor(private router:Router, private userAccountServices: UserAccountService, private profileService: ProfileService) { 
+    this.updatedCurrentUser = this.userAccountServices.getCurrentUser(); // Update the user profile with the global currenet user'profile
+    console.log(this.updatedCurrentUser);
+  }
 
   ngOnInit(): void {
   }
 
   updateProfile(){
-    this.router.navigate(['/feed']);
-    console.log("Testing Update Profile function"); //TESTING
+    
+    this.userAccountServices.create(this.updatedCurrentUser);// Update the global current user's profile
+    this.profileService.updateProfile(this.updatedCurrentUser).subscribe(data => {
+      //this.arrayOfProfiles = data.data;
+      console.log(data); //TESTING
+      this.router.navigate(['/feed']);
+    })
+    console.log(this.updatedCurrentUser);
   }
 
   // Capture user input from input field
   getUserName($event:any){
-    this.newUserName = $event;
+    //this.newUserName = $event;
+    this.updatedCurrentUser.userName = $event;
   }
 
   // Capture user input from input field
   getEmail($event:any){
-    this.newUserEmail = $event;
+    //this.newUserEmail = $event;
+    this.updatedCurrentUser.email = $event;
   }
 
       // Capture user input from input field
   getFirstName($event:any){
-    this.newUserFname = $event;
+    //this.newUserFname = $event;
+    this.updatedCurrentUser.firstName = $event;
   }  
 
   // Capture user input from input field
   getLastName($event:any){
-    this.newUserLname = $event;
+    //this.newUserLname = $event;
+    this.updatedCurrentUser.lastName = $event;
   }
 
   // Capture user input from input field
   getPhone($event:any){
-    this.newUserPhone = $event;
+    //this.newUserPhone = $event;
+    this.updatedCurrentUser.phoneNumber = $event;
   }
 
 }

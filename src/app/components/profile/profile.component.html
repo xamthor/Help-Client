@@ -10,5 +10,5 @@
     
     <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>
     <app-login-inputs [title]="titleUserEmail" (getUserInput)="getEmail($event)" ></app-login-inputs>
-    <h1 *ngIf="!register" class="text-3xl cursor-pointer text-black dark:text-white" (click)="updateProfile()">Update</h1>
+    <h1 class="text-3xl cursor-pointer text-black dark:text-white" (click)="updateProfile()">Update</h1>
 </main>

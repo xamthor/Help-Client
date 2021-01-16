@@ -45,9 +45,12 @@ export class LoginScreenComponent implements OnInit {
     }
     
     this.loginService.validateUser(this.newUserEmail, this.newUserPassword).subscribe(data => {
+      //console.log(data); //TESTING
       newUser.userName = data.data.user.userName;
       newUser.email = data.data.user.email;
       newUser.firstName = data.data.user.userName;
+      newUser.lastName = data.data.user.lastName;
+      newUser.phoneNumber = data.data.user.phoneNumber;
       this.authenticateUser.updateToken(data.token) // Save the user's token
       this.userAccountService.create(newUser); // Update the global "currentUser" data
       this.router.navigate(['/feed']);
