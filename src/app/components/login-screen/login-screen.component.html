@@ -3,6 +3,10 @@
     <section class="flex flex-row h-full">
         <article class="mt-20 sm:ml-4 sm:mr-4 lg:mr-20 hidden sm:block md:block lg:block xl:block h-full">
             <img class="h-2/3 " src="../../../assets/hands.png" />
+            <div class="w-full text-center">
+                <span class="text-xs">Photo by <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tim Mossholder</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+            </div>
+            
         </article>
         <article class="flex flex-col justify-around sm:h-auto sm:mt-20 sm:pb-4 text-center sm:bg-none">
             <h3 *ngIf="!register" class="text-3xl text-black dark:text-white">Welcome</h3>
@@ -10,7 +14,7 @@
             <section class="flex flex-col items-center">
                 <app-login-inputs [title]="titleUserEmail" (getUserInput)="getEmail($event)" ></app-login-inputs>
                 <app-login-inputs [title]="titleUserPassword"(getUserInput)="getPassword($event)"></app-login-inputs>
-                <p *ngIf="inValidLogin" class="text-md text-red-600">InValid Login or Password</p>
+                <p *ngIf="inValidLogin" class="text-md text-red-600">Invalid Login or Password</p>
                 <article *ngIf="register">
                     <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>
                 </article>         

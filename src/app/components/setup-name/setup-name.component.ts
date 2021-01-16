@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {UserAccountService} from '../../services/user-account.service';
 import {UserCreationService} from '../../services/user-creation.service';
 import {Router} from '@angular/router';
 

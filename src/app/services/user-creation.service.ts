@@ -43,7 +43,15 @@ export class UserCreationService {
 
   // Method used on the setup user account pages to update the temp user (newUser)
   updatephone(phone: string) {
-      this.newUser.phoneNumber = phone;    
+      const regexTest : RegExp = /[0-9]/;
+      let phoneArray: string[] = phone.split("");
+      let newPhoneArray: string[] = [];
+      phoneArray.forEach(num => {
+        if(regexTest.test(num)){
+          newPhoneArray.push(num);
+        }
+      });
+      this.newUser.phoneNumber = newPhoneArray.join(""); 
   }
 
   // Update the user account service and database with the temp user

@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
 
 	ngOnInit(): void {
 		this.darkmode()
-		console.log(environment.production); // Logs false for default environment
+		//console.log(environment.production); // Logs false for default environment
 	}
 
 	darkmode(): boolean{

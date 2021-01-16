@@ -11,6 +11,7 @@
 
     <section *ngIf="stage === 2" class="flex flex-col items-center">
         <app-login-inputs [title]="titlePhone" (getUserInput)="getPhone($event)"></app-login-inputs>
+        <p class="text-sm sm:text-lg text-gray-400 mb-4"><span class="text-green-400">Preferred Format:</span> Numbers Only (Example 9018884484)</p>
     </section> 
 
     <h2 class="text-3xl cursor-pointer  text-black dark:text-white" (click)="goToNextSetupStage()">Next</h2>
