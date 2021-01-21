@@ -5,27 +5,22 @@
             <img class="h-2/3 " src="../../../assets/hands.png" />
             <div class="w-full text-center">
                 <span class="text-xs">Photo by <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tim Mossholder</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-            </div>
-            
+            </div>            
         </article>
         <article class="flex flex-col justify-around sm:h-auto sm:mt-20 sm:pb-4 text-center sm:bg-none">
-            <h3 *ngIf="!register" class="text-3xl text-black dark:text-white">Welcome</h3>
-            <h3 *ngIf="register" class="text-3xl text-black dark:text-white">Create account</h3>
+            <h3 class="text-3xl text-black dark:text-white">Welcome</h3>
+            <h3 class="text-3xl text-black dark:text-white">Create account</h3>
             <section class="flex flex-col items-center">
                 <app-login-inputs [title]="titleUserEmail" (getUserInput)="getEmail($event)" ></app-login-inputs>
                 <app-login-inputs [title]="titleUserPassword"(getUserInput)="getPassword($event)"></app-login-inputs>
-                <p *ngIf="inValidLogin" class="text-md text-red-600">Invalid Login or Password</p>
-                <article *ngIf="register">
-                    <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>
-                </article>         
+                <p *ngIf="inValidLogin" class="text-md text-red-600">Invalid Login or Password</p>         
             </section>    
             <section class="h-12 flex flex-col justify-around">
-                <h3 *ngIf="!register" class="text-3xl cursor-pointer text-black dark:text-white" (click)="login()">Sign In</h3>
-                <h3 *ngIf="register" class="text-3xl cursor-pointer text-black dark:text-white" (click) ="createAccountAndLogin()" >Create</h3>
+                <h3 class="text-3xl cursor-pointer text-black dark:text-white" (click)="login()">Sign In</h3>
             </section>
-            <p *ngIf="!register" class="h-12 mb-8">
+            <p class="h-12 mb-8">
                 <span class="text-gray-400">Don't have an account?</span> 
-                <a class="cursor-pointer text-black dark:text-white" (click)="gotoCreateAccountViewScreen()"> Create</a>
+                <a class="cursor-pointer text-black dark:text-white" (click)="createAccountAndLogin()"> Create</a>
             </p>
         </article>
     </section>

@@ -42,7 +42,7 @@ export class UserCreationService {
   }
 
   // Method used on the setup user account pages to update the temp user (newUser)
-  updatephone(phone: string) {
+  updatephone(phone: string) :string{
       const regexTest : RegExp = /[0-9]/;
       let phoneArray: string[] = phone.split("");
       let newPhoneArray: string[] = [];
@@ -51,15 +51,16 @@ export class UserCreationService {
           newPhoneArray.push(num);
         }
       });
-      this.newUser.phoneNumber = newPhoneArray.join(""); 
+      //this.newUser.phoneNumber = newPhoneArray.join(""); 
+      return newPhoneArray.join("");
   }
 
   // Update the user account service and database with the temp user
-  async createUser(){
-    this.userAccountService.create(this.newUser);
+  async createUser(tempUser: User){
+    this.userAccountService.create(tempUser);
 
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
-    var raw = JSON.stringify(this.newUser);
+    var raw = JSON.stringify(tempUser);
     await this.http.post<any>(`${environment.apiEndPointRoute}/auth/signup`, raw,{headers: headers}).subscribe(
       results => {
         this.authenticateUser.updateToken(results.token) //record the auth token

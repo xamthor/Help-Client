@@ -1,15 +1,20 @@
 <main class="flex flex-col justify-around h-screen text-center">
     <h2 class="text-3xl text-black dark:text-white">Welcome</h2>
-    <h3 *ngIf="stage === 1" class="text-base -mt-20 -mb-20 text-black dark:text-white" >We just have a few things to setup</h3>
-    <h3 *ngIf="stage === 2" class="text-base -mt-20 -mb-20 text-black dark:text-white">Lets get your phone number to easily connect you with others</h3>
-    <h3 *ngIf="stage === 3 " class="text-base -mt-20 -mb-20 text-black dark:text-white" >Let's make some connections</h3>
+    <h3 *ngIf="stage === 2" class="text-base -mt-20 -mb-20 text-black dark:text-white" >We just have a few things to setup</h3>
+    <h3 *ngIf="stage === 3" class="text-base -mt-20 -mb-20 text-black dark:text-white">Lets get your phone number to easily connect you with others</h3>
 
     <section *ngIf="stage === 1" class="flex flex-col items-center">
+        <app-login-inputs [title]="titleUserEmail" (getUserInput)="getEmail($event)" ></app-login-inputs>
+        <app-login-inputs [title]="titleUserPassword"(getUserInput)="getPassword($event)"></app-login-inputs>
+         <app-login-inputs [title]="titleUserName" (getUserInput)="getUserName($event)" ></app-login-inputs>        
+    </section>
+
+    <section *ngIf="stage === 2" class="flex flex-col items-center">
         <app-login-inputs [title]="titleFirstName" (getUserInput)="getFirstName($event)"></app-login-inputs>
         <app-login-inputs [title]="titleLastName" (getUserInput)="getLastName($event)"></app-login-inputs>
     </section> 
 
-    <section *ngIf="stage === 2" class="flex flex-col items-center">
+    <section *ngIf="stage === 3" class="flex flex-col items-center">
         <app-login-inputs [title]="titlePhone" (getUserInput)="getPhone($event)"></app-login-inputs>
         <p class="text-sm sm:text-lg text-gray-400 mb-4"><span class="text-green-400">Preferred Format:</span> Numbers Only (Example 9018884484)</p>
     </section> 
