@@ -15,7 +15,7 @@ export class HomepageComponent implements OnInit {
 
   navigateToLogin(){
     this.router.navigate(['/login']);
-    console.log("working")
+    //console.log("working")
   }
 
 }

@@ -15,8 +15,8 @@ export class ContentHeaderComponent implements OnInit {
 
   constructor(private userAccountService: UserAccountService, private router:Router) { }
 
-  navigateToStatusUpdate(){
-    this.router.navigate(['/update-status']);
+  navigateToProfile(){
+    this.router.navigate(['/profile']);
   }
 
   navigateToMenu(){

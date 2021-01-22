@@ -61,10 +61,10 @@ export class UserAccountService {
     return this.currentUser.firstName;    
   }
 
-  // Return's the current user's username
-  getUserName() {
+  // Method used on the Profile compnoent to update local data with the current user data
+  getCurrentUser() {
     // TODO check the current session to detect which user is active
-    return this.currentUser.userName;
+    return this.currentUser;
   }
 
   // Method used on the content-feed and content-connections pages to display a user's connections

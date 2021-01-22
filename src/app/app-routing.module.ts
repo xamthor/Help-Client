@@ -8,13 +8,15 @@ import {ConnectionsContentComponent} from './components/connections-content/conn
 import {UpdateStatusComponent} from './components/update-status/update-status.component';
 import {MenuScreenComponent} from './components/menu-screen/menu-screen.component';
 import {SearchConnectionsComponent} from './components/search-connections/search-connections.component';
-import {HomepageComponent} from './components/homepage/homepage.component'
+import {HomepageComponent} from './components/homepage/homepage.component';
+import {ProfileComponent} from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginScreenComponent },
   { path: 'home', component: HomepageComponent },
   { path: 'setup', component: SetupNameComponent },
   { path: 'feed', component: FeedContentComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: 'message', component: MessagesContentComponent},
   {path: 'connections', component: ConnectionsContentComponent},
   {path: 'update-status', component: UpdateStatusComponent},
