@@ -25,6 +25,7 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
+              "src/loaderio-92ac0ac39c3c65b8707d146962aa2ba3.txt",
               "src/assets"
             ],
             "styles": [
