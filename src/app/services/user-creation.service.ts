@@ -26,36 +26,30 @@ export class UserCreationService {
 
   constructor(private userAccountService: UserAccountService, private http: HttpClient, private router:Router, private authenticateUser: AuthenticateService) { }
 
-  // Create a temp user (newUswer) during user account creation 
-  setUpUser( tempUser: User){
-    this.newUser = tempUser;
-  }
-
   // Method used on the setup user account pages to update the temp user (newUser)
-  updateFirstName(fName: string) {
-      this.newUser.firstName = fName;    
-  }
-
-  // Method used on the setup user account pages to update the temp user (newUser)
-  updateLastName(lName: string) {
-      this.newUser.lastName = lName;    
-  }
-
-  // Method used on the setup user account pages to update the temp user (newUser)
-  updatephone(phone: string) {
-      this.newUser.phoneNumber = phone;    
+  updatephone(phone: string) :string{
+      const regexTest : RegExp = /[0-9]/;
+      let phoneArray: string[] = phone.split("");
+      let newPhoneArray: string[] = [];
+      phoneArray.forEach(num => {
+        if(regexTest.test(num)){
+          newPhoneArray.push(num);
+        }
+      });
+      
+      return newPhoneArray.join("");
   }
 
   // Update the user account service and database with the temp user
-  async createUser(){
-    this.userAccountService.create(this.newUser);
+  async createUser(tempUser: User){
+    this.userAccountService.create(tempUser);
 
     const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
-    var raw = JSON.stringify(this.newUser);
+    var raw = JSON.stringify(tempUser);
     await this.http.post<any>(`${environment.apiEndPointRoute}/auth/signup`, raw,{headers: headers}).subscribe(
       results => {
-        this.authenticateUser.updateToken(results.token) //record the auth token
-        this.router.navigate(['/search-connections']); // Redirect the user to search connections's screen 
+        this.authenticateUser.updateToken(results.token)  //record the auth token
+        this.router.navigate(['/search-connections']);    // Redirect the user to search connections's screen 
       },
       Error => {
         console.log('Error happened')

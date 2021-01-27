@@ -24,6 +24,7 @@ import { UpdateStatusComponent } from './components/update-status/update-status.
 import { MenuScreenComponent } from './components/menu-screen/menu-screen.component';
 import { SearchConnectionsComponent } from './components/search-connections/search-connections.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     UpdateStatusComponent,
     MenuScreenComponent,
     SearchConnectionsComponent,
-    HomepageComponent
+    HomepageComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
