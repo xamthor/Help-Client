@@ -46,6 +46,7 @@ The ultimate motivation was to provide support to our friends and family who suf
 
 ### License  
 Commons Clause PUBLIC LICENSE
+
 _Created by Miguel Hernandez and JC Smiley in June of 2020_
 
 
